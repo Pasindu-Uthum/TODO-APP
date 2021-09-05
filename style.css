@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("images/Garden.jpg");
+  background-size: 1600px;
+  background-repeat: no-repeat;
+}
+
+.app-container .app {
+  width: 50%;
+  height: 90%;
+  background-color: #1fbfb8;
+  border-radius: 20px;
+}
+
+.app-container .app hr {
+  background-color: black;
+  border: 0.1px solid black;
+  opacity: 0.5;
+}
+
+.app-container .app h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 50px;
+  padding: 10px 10px 10px 50px;
+  color: #031163;
+}
+
+.app-container .app h1 #settings {
+  float: right;
+  color: black;
+  font-size: 25px;
+  padding: 16px;
+  margin-top: 7px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.app-container .app h1 #settings:hover {
+  color: #002829;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.app-container .app #clear {
+  position: absolute;
+  bottom: 5%;
+  right: 25%;
+  float: right;
+  background-color: #5d579d;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+  padding: 16px;
+  border: none;
+  border-bottom-right-radius: 20px;
+  display: block;
+}
+
+.app-container .app #clear:hover {
+  background-color: #36004d;
+}
+
+.app-container .app .input-field {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+.app-container .app .input-field input {
+  padding: 10px;
+  height: 2.4em;
+  border-top-right-radius: 1.2em;
+  border-bottom-right-radius: 1.2em;
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  border: none;
+  width: 80%;
+}
+
+.app-container .app .input-field input:focus {
+  outline: none;
+}
+
+.app-container .app .input-field button {
+  padding: 10px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  border: none;
+  font-weight: bolder;
+  height: 2.4em;
+  border-top-left-radius: 1.2em;
+  border-bottom-left-radius: 1.2em;
+  background-color: white;
+  color: black;
+}
+
+.app-container .app .tasks-menu {
+  width: 90%;
+  height: 60%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  margin: 5%;
+}
+
+.app-container .app .tasks-menu .stats {
+  width: 100%;
+}
+
+.app-container .app .tasks-menu .stats::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.app-container .app .tasks-menu #counter {
+  font-family: "Varela Round", sans-serif;
+  font-size: 15px;
+  color: black;
+  width: 50%;
+  float: left;
+}
+
+.app-container .app .tasks-menu #counter::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.app-container .app .tasks-menu #complete-counter {
+  font-family: "Varela Round", sans-serif;
+  font-size: 15px;
+  color: black;
+  padding-bottom: 5px;
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+.app-container .app .tasks-menu #complete-counter::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.app-container .app .tasks-menu .task {
+  font-family: "Varela Round", sans-serif;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px 50px;
+  position: relative;
+}
+
+.app-container .app .tasks-menu .task .delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0px;
+  background-color: #031163;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  white-space: nowrap;
+  color: white;
+}
+
+.app-container .app .tasks-menu .task .delete:hover {
+  color: white;
+  background-color: #232c5f;
+}
+
+.app-container .app .tasks-menu .task .complete {
+  height: 2em;
+  border-radius: 1.2em;
+  width: 2em;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border: 2px solid black;
+  opacity: 0.5;
+}
+
+.app-container .app .tasks-menu .task .complete:hover {
+  opacity: 1;
+}
+
+.app-container .app .tasks-menu .task #complete {
+  background-color: black;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50px;
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50px;
+  }
+}
+
+@-webkit-keyframes shrink {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 0px;
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 50px;
+  }
+  to {
+    width: 0px;
+  }
+}
+
+.settings-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.settings-menu {
+  width: 50%;
+  height: 90%;
+  margin-top: 2.7%;
+  margin-right: 25%;
+  background-color: white;
+  border-radius: 20px;
+  float: right;
+  overflow: hidden;
+  position: relative;
+}
+
+.settings-menu i {
+  float: right;
+  color: black;
+  font-size: 25px;
+  border-bottom-left-radius: 1.7em;
+  height: 3.4em;
+  width: 3.4em;
+  padding: 31px 0px 16px 26px;
+  background-color: #1fbfb8;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.settings-menu i:hover {
+  color: #002829;
+  color: darkslategrey;
+}
+
+.settings-menu h2 {
+  font-family: "Varela Round", sans-serif;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.settings-menu h3 {
+  font-family: "Varela Round", sans-serif;
+  padding-top: 50px;
+}
+
+.settings-menu .themes {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 99.5%;
+}
+
+.settings-menu .themes .column {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  min-width: 20%;
+  height: 80px;
+  overflow: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.settings-menu .themes .column img {
+  width: 120%;
+  padding: 2px;
+}
+
+.settings-menu .themes .column:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.settings-menu .form {
+  width: 100%;
+}
+
+.settings-menu .form input {
+  font-family: "Varela Round", sans-serif;
+  padding: 10px;
+  font-size: 16px;
+  width: 90%;
+  margin: 12px;
+}
+
+.settings-menu .form input:last-child {
+  background-color: dodgerblue;
+  border: none;
+}
+
+.settings-menu .form input:last-child:hover {
+  background-color: #092d50;
+  color: white;
+}
+
+@-webkit-keyframes resize {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: 90%;
+    width: 50%;
+  }
+}
+
+@keyframes resize {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: 90%;
+    width: 50%;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(115, 34, 255, 0.342);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1a025257;
+}
+
+@media screen and (max-width: 664px) {
+  .settings-menu {
+    width: 70%;
+    height: 90%;
+    margin: 5% 15%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

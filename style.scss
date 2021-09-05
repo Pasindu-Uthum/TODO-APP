@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+$default-font : 'Varela Round', sans-serif;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.app-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/Garden.jpg');
+    background-size: 1600px;
+    background-repeat: no-repeat;
+    .app {
+        width: 50%;
+        height: 90%;
+        background-color: #1fbfb8;
+        border-radius: 20px;
+        hr {
+            background-color: black;
+            border: 0.1px solid black;
+            opacity: 0.5;
+        }
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            padding: 10px 10px 10px 50px;
+            color: #031163;
+            #settings {
+                float: right;
+                color: black;
+                font-size: 25px;
+                padding: 16px;
+                margin-top: 7px;
+                transition: 0.5s;
+                &:hover {
+                    color: rgb(0, 40, 41);
+                    transform: scale(1.5);
+                }
+            }
+        }
+        #clear {
+            position: absolute;
+            bottom: 5%;
+            right: 25%;
+            float: right;
+            background-color: #5d579d;
+            color: white;
+            font-family: $default-font;
+            padding: 16px;
+            border: none;
+            border-bottom-right-radius: 20px;
+            display: block;
+            &:hover {
+                background-color: rgb(54, 0, 77);
+            }
+        }
+        .input-field {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 10px;
+            margin-top: 20px;
+            input {
+                padding: 10px;
+                height: 2.4em;
+                border-top-right-radius: 1.2em;
+                border-bottom-right-radius: 1.2em;
+                font-family: $default-font;
+                font-size: 16px;
+                border: none;
+                width: 80%;
+                &:focus {
+                    outline: none;
+                }
+            }
+            button {
+                padding: 10px;
+                font-family: $default-font;
+                font-size: 16px;
+                border: none;
+                font-weight: bolder;
+                height: 2.4em;
+                border-top-left-radius: 1.2em;
+                border-bottom-left-radius: 1.2em;
+                background-color: white;
+                color: black;
+            }
+        }   
+        .tasks-menu {
+            width: 90%;
+            height: 60%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+            margin: 5%;
+            .stats {
+                width: 100%;
+                &::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+                }
+            }
+            #counter {
+                font-family: $default-font;
+                font-size: 15px;
+                color: black;
+                width: 50%;
+                float: left;
+                &::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+                }
+            }
+            #complete-counter {
+                font-family: $default-font;
+                font-size: 15px;
+                color: black;
+                padding-bottom: 5px;
+                width: 50%;
+                float: left;
+                text-align: right;
+                &::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+                }
+            }
+            .task {
+                font-family: $default-font;
+                font-size: 16px;
+                background-color: white;
+                width: 100%;
+                margin-top: 5px;
+                padding: 10px 50px;
+                position: relative;
+                .delete {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 0px;
+                    // animation-name: expand;
+                    // animation-duration: 0.2s;
+                    background-color: #031163;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    white-space: nowrap;
+                    color: white;
+                    &:hover {
+                        color: white;
+                        background-color: #232c5f;
+                    }
+                }
+                .complete {
+                    height: 2em;
+                    border-radius: 1.2em;
+                    width: 2em;
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    border: 2px solid black;
+                    opacity: 0.5;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+                #complete {
+                    background-color: black;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@keyframes expand {
+    from {width: 0}
+    to {width: 50px;}
+}
+
+@keyframes shrink {
+    from {width: 50px}
+    to {width: 0px;}
+}
+
+.settings-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: block;
+}
+.settings-menu {
+    width: 50%;
+    height: 90%;
+    margin-top: 2.7%;
+    margin-right: 25%; 
+    background-color: white;
+    border-radius: 20px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    i {
+        float: right;
+        color: black;
+        font-size: 25px;
+        border-bottom-left-radius: 1.7em;
+        height: 3.4em;
+        width: 3.4em;
+        padding: 31px 0px 16px 26px;
+        background-color: #1fbfb8;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &:hover {
+            color: rgb(0, 40, 41);
+            color: darkslategrey;
+        }
+    }
+    h2 {
+        font-family: $default-font;
+        text-align: center;
+        padding-top: 15px;
+    }
+    h3 {
+        font-family: $default-font;
+        padding-top: 50px;
+    }
+    .themes {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 99.5%;
+        .column {
+            flex: 20%;
+            min-width: 20%;
+            height: 80px;
+            overflow: hidden;
+            transition: 0.4s;
+            img {
+                width: 120%;
+                padding: 2px;
+            }
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .form {
+        width: 100%;
+        input {
+            font-family: $default-font;
+            padding: 10px;
+            font-size: 16px;
+            width: 90%;
+            margin: 12px;
+            &:last-child {
+                background-color: dodgerblue;
+                border: none;
+                &:hover {
+                    background-color: rgb(9, 45, 80);
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+@keyframes resize {
+    from {
+        height: 0;
+        width: 0;
+    }
+    to {
+        height: 90%;
+        width: 50%;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(115, 34, 255, 0.342); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1a025257; 
+  }
+
+@media screen and (max-width: 664px) {
+    .settings-menu {
+        width: 70%;
+        height: 90%;
+        margin: 5% 15%;
+    }
+}
