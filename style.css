@@ -278,19 +278,29 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .settings-menu {
   width: 50%;
   height: 90%;
-  margin-top: 2.7%;
-  margin-right: 25%;
   background-color: white;
   border-radius: 20px;
   float: right;
   overflow: hidden;
   position: relative;
+  -webkit-animation-name: resize;
+          animation-name: resize;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 .settings-menu i {
@@ -322,6 +332,7 @@
 .settings-menu h3 {
   font-family: "Varela Round", sans-serif;
   padding-top: 50px;
+  padding-left: 5px;
 }
 
 .settings-menu .themes {
@@ -363,17 +374,35 @@
   font-family: "Varela Round", sans-serif;
   padding: 10px;
   font-size: 16px;
-  width: 90%;
-  margin: 12px;
+  width: 96%;
+  margin: 5px;
 }
 
-.settings-menu .form input:last-child {
-  background-color: dodgerblue;
+.settings-menu .form textarea {
+  margin-left: 6px;
+  font-family: "Varela Round", sans-serif;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.settings-menu .form button {
   border: none;
+  width: 96%;
+  margin-left: 5px;
 }
 
-.settings-menu .form input:last-child:hover {
-  background-color: #092d50;
+.settings-menu .form button a {
+  background-color: dodgerblue;
+  display: block;
+  padding: 12px;
+  font-size: 16px;
+  font-family: "Varela Round", sans-serif;
+  color: black;
+  text-decoration: none;
+}
+
+.settings-menu .form button a:hover {
+  background-color: #092846;
   color: white;
 }
 
@@ -422,11 +451,75 @@
   background: #1a025257;
 }
 
-@media screen and (max-width: 664px) {
+@media screen and (max-width: 671px) {
+  .app-container .app {
+    width: 80%;
+  }
+  .app-container .app #clear {
+    right: 10%;
+  }
   .settings-menu {
-    width: 70%;
+    width: 80%;
+    -webkit-animation-name: resize2;
+            animation-name: resize2;
+  }
+}
+
+@-webkit-keyframes resize2 {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
     height: 90%;
-    margin: 5% 15%;
+    width: 80%;
+  }
+}
+
+@keyframes resize2 {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: 90%;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .app-container .app {
+    width: 98%;
+  }
+  .app-container .app #clear {
+    right: 1%;
+  }
+  .settings-menu {
+    width: 98%;
+    -webkit-animation-name: resize3;
+            animation-name: resize3;
+  }
+}
+
+@-webkit-keyframes resize3 {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: 90%;
+    width: 98%;
+  }
+}
+
+@keyframes resize3 {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: 90%;
+    width: 98%;
   }
 }
 /*# sourceMappingURL=style.css.map */

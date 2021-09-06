@@ -42,12 +42,11 @@
                 <div class="column"><img class="images" src="images/Snow.jpg" alt="Snow"></div>
             </div>
             <h3>Feedback Section</h3>
-            <form class="form" method="post" action="feedback.php">
-                <input name="name" type="text" placeholder="Name" required>
-                <input name="mail" type="text" placeholder="Email" required>
-                <input name="subject" type="text" placeholder="Subject" required>
-                <input name="message" type="text" placeholder="Message" required>
-                <button type="submit" name="submit">SEND MAIL</button>
+            <form class="form">
+                <input id="name" type="text" placeholder="Name" required>
+                <input id="mail" type="text" placeholder="Email" required>
+                <textarea name="msg" id="last-input" cols="79" rows="8" placeholder="Message"></textarea>
+                <div class="send"></div>
             </form>
         </div>
     </div>

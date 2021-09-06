@@ -99,9 +99,7 @@ hidden_settings.onclick = function() {
     settings_menu.style.display = 'none';
 }
 settings.onclick = function() {
-    settings_inside.style.animationName = 'resize';
-    settings_inside.style.animationDuration = '1s';
-    settings_menu.style.display = 'block';
+    settings_menu.style.display = 'flex';
 }
 
 
@@ -113,4 +111,15 @@ for (let x = 0; x < images.length; x++) {
         let source = this.src;
         background.style.backgroundImage = `url("${source}")`;
     }
+}
+
+
+const lastInput = document.getElementById('last-input');
+const sendDiv = document.querySelector(".send");
+const user_name = document.getElementById('name');
+const user_mail = document.getElementById('mail');
+
+
+lastInput.onblur = function() {
+    sendDiv.innerHTML = `<button id="send-btn" name="submit"><a href="mailto:pasinduuthum31@gmail.com?subject=A FeedBack from the TODO Application&body=Name : ${user_name.value}%0D%0AMessage : ${lastInput.value}">SEND MAIL</a></button>`;
 }
